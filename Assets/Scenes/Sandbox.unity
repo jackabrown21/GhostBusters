@@ -1582,6 +1582,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   changeDirectionInterval: 3
+  minPosition: {x: -2, y: 0, z: -2}
+  maxPosition: {x: 2, y: 0, z: 2}
 --- !u!65 &1123388714
 BoxCollider:
   m_ObjectHideFlags: 0
