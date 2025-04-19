@@ -8,8 +8,6 @@ public class LightButton : MonoBehaviour
     private bool _deadTimeActive = false;
 
     public UnityEvent onPressed;
-
-    public Light lightSource; // Reference to the light source
     public AudioSource audioSource;
 
     private void OnTriggerEnter(Collider other)
@@ -17,6 +15,7 @@ public class LightButton : MonoBehaviour
         if (other.tag == "Button" && !_deadTimeActive)
         {
             onPressed?.Invoke();
+            audioSource.Play();
             Debug.Log("Button Pressed");
 
         }
@@ -37,12 +36,6 @@ public class LightButton : MonoBehaviour
         _deadTimeActive = true;
         yield return new WaitForSeconds(deadTime);
         _deadTimeActive = false;
-    }
-
-    public void ToggleLight()
-    {
-        lightSource.enabled = !lightSource.enabled;
-        audioSource.Play(); // Play sound when toggling the light
     }
 
 
