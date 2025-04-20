@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Level 1.unity
     guid: 2c34187b7de75e24fbdcffd5da693303
   - enabled: 0
     path: Assets/Scenes/Sandbox.unity
     guid: a8c2692e1c245d346b5703bce7dd2958
+  - enabled: 1
+    path: Assets/Scenes/Vacuum.unity
+    guid: b2a44a69a14b048d7b2ad94531fe3f24
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f4b02dce6696f494ea532ff6a15a671f, type: 2}
