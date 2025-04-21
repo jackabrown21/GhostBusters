@@ -773,6 +773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7072478885644867279}
+  - component: {fileID: 8277090819187226076}
   m_Layer: 0
   m_Name: hands:b_l_index1
   m_TagString: Untagged
@@ -796,6 +797,29 @@ Transform:
   - {fileID: 7072478885644867265}
   m_Father: {fileID: 7072478885644867275}
   m_LocalEulerAnglesHint: {x: -73.731, y: 44.736, z: 123.518}
+--- !u!136 &8277090819187226076
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072478885645355759}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.017935397
+  m_Height: 0.12197913
+  m_Direction: 0
+  m_Center: {x: -0.03, y: 0.01, z: 0}
 --- !u!1 &7072478885645355761
 GameObject:
   m_ObjectHideFlags: 0

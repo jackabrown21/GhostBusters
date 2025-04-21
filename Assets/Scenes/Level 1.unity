@@ -3442,7 +3442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e2519bd9c5b4175a4ab2eab5b75cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   changeDirectionInterval: 3
   minPosition: {x: -4, y: 0, z: -8}
   maxPosition: {x: 6, y: 0, z: 3}
@@ -24228,6 +24228,10 @@ PrefabInstance:
     - target: {fileID: 4112329421155184130, guid: 0805bcadfcd46044490bb224edaab665, type: 3}
       propertyPath: m_Name
       value: Vacuum
+      objectReference: {fileID: 0}
+    - target: {fileID: 7751012991544134849, guid: 0805bcadfcd46044490bb224edaab665, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
