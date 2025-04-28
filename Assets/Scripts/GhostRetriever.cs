@@ -43,37 +43,37 @@ public class GhostRetriever : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider other)
+{
+    if (!isHeld) return;
+
+    if (!other.CompareTag("Ghost")) return; // Check the collider you actually hit
+
+    float distance = Vector3.Distance(suctionPoint.position, other.transform.position);
+    Debug.Log($"[GhostRetriever] Distance to {other.name}: {distance}");
+
+    if (distance < destroyDistance)
     {
-        if (!isHeld) return;
+        Debug.Log($"[GhostRetriever] Ghost destroyed: {other.name}");
 
-        Transform root = other.transform.root;
-        if (!root.CompareTag("Ghost")) return;
-
-        float distance = Vector3.Distance(suctionPoint.position, root.position);
-        Debug.Log($"[GhostRetriever] Distance to {root.name}: {distance}");
-
-        if (distance < destroyDistance)
+        if (vacuumAudioSource != null && vacuumSound != null)
         {
-            Debug.Log($"[GhostRetriever] Ghost destroyed: {root.name}");
-
-            if (vacuumAudioSource != null && vacuumSound != null)
+            if (!vacuumAudioSource.isPlaying)
             {
-                if (!vacuumAudioSource.isPlaying)
-                {
-                    vacuumAudioSource.clip = vacuumSound;
-                    vacuumAudioSource.loop = false;
-                    vacuumAudioSource.Play();
-                    Invoke(nameof(StopVacuumSound), 2f);
-                }
+                vacuumAudioSource.clip = vacuumSound;
+                vacuumAudioSource.loop = false;
+                vacuumAudioSource.Play();
+                Invoke(nameof(StopVacuumSound), 2f);
             }
-
-            Destroy(root.gameObject);
-
-            ghostCount++;
-            if (ghostCounterText != null)
-                ghostCounterText.text = ghostCount.ToString();
         }
+
+        Destroy(other.gameObject);
+
+        ghostCount++;
+        if (ghostCounterText != null)
+            ghostCounterText.text = ghostCount.ToString();
     }
+}
+
 
     private void StopVacuumSound()
     {

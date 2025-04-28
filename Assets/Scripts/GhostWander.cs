@@ -2,19 +2,41 @@ using UnityEngine;
 
 public class GhostWander : MonoBehaviour
 {
-    public float speed = 2f;
-    public float changeDirectionInterval = 3f;
+    public float speed;                      // Set in Inspector
+    public float changeDirectionInterval;    // Set in Inspector
 
-    public Vector3 minPosition = new Vector3(-5f, 0f, -5f);
-    public Vector3 maxPosition = new Vector3(5f, 0f, 5f);
+    public Vector3 minPosition;               // Set in Inspector
+    public Vector3 maxPosition;               // Set in Inspector
 
     private Vector3 direction;
 
     void Start()
-    {
-        PickNewDirection();
-        InvokeRepeating("PickNewDirection", changeDirectionInterval, changeDirectionInterval);
-    }
+{
+    // Force starting inside the box
+    Vector3 clampedStart = transform.position;
+    clampedStart.x = Mathf.Clamp(clampedStart.x, minPosition.x, maxPosition.x);
+    clampedStart.z = Mathf.Clamp(clampedStart.z, minPosition.z, maxPosition.z);
+    transform.position = clampedStart;
+
+    PickNewDirection();
+    InvokeRepeating(nameof(PickNewDirection), changeDirectionInterval, changeDirectionInterval);
+}
+void OnDrawGizmosSelected()
+{
+    Gizmos.color = Color.cyan;
+    Vector3 center = new Vector3(
+        (minPosition.x + maxPosition.x) / 2f,
+        transform.position.y,
+        (minPosition.z + maxPosition.z) / 2f
+    );
+    Vector3 size = new Vector3(
+        Mathf.Abs(maxPosition.x - minPosition.x),
+        0.1f,
+        Mathf.Abs(maxPosition.z - minPosition.z)
+    );
+    Gizmos.DrawWireCube(center, size);
+}
+
 
     void Update()
     {
@@ -23,13 +45,14 @@ public class GhostWander : MonoBehaviour
         if (newPosition.x < minPosition.x || newPosition.x > maxPosition.x)
         {
             direction.x *= -1;
-            newPosition.x = Mathf.Clamp(newPosition.x, minPosition.x, maxPosition.x);
         }
         if (newPosition.z < minPosition.z || newPosition.z > maxPosition.z)
         {
             direction.z *= -1;
-            newPosition.z = Mathf.Clamp(newPosition.z, minPosition.z, maxPosition.z);
         }
+
+        newPosition.x = Mathf.Clamp(newPosition.x, minPosition.x, maxPosition.x);
+        newPosition.z = Mathf.Clamp(newPosition.z, minPosition.z, maxPosition.z);
 
         transform.position = newPosition;
     }

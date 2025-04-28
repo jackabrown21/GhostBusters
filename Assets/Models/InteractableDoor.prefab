@@ -314,8 +314,8 @@ Transform:
   m_GameObject: {fileID: 7214249534649903883}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000032633538}
-  m_LocalPosition: {x: -1.168, y: -2.142075, z: 1.8355143}
-  m_LocalScale: {x: 1.15, y: 1.08, z: 1}
+  m_LocalPosition: {x: -1.1515, y: -2.142075, z: 1.836}
+  m_LocalScale: {x: 1.1225373, y: 1.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1105424142485924921}
@@ -557,7 +557,7 @@ HingeJoint:
   serializedVersion: 3
   m_ConnectedBody: {fileID: 0}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 1, z: -1.5}
+  m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
@@ -575,8 +575,8 @@ HingeJoint:
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -210
-    max: 30
+    min: -150
+    max: 85
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
