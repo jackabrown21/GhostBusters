@@ -36,13 +36,13 @@ Material:
   m_Name: Ghost
   m_Shader: {fileID: -6465566751694194690, guid: a7e80d4c44a5fef4e95c44c737299ee4, type: 3}
   m_Parent: {fileID: 2100000, guid: 59075f775befbc94fb3f2bc60ca0f90b, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_ModifiedSerializedProperties: 16
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 1998
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
