@@ -166,7 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 347377942}
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
@@ -286,7 +287,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  m_FarAttachMode: 0
+  m_FarAttachMode: 1
 --- !u!54 &347377941
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -469,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 1242700729}
     - target: {fileID: 776804357993636149, guid: 5babc6b3674b57548a6ba9465d0df7d6, type: 3}
       propertyPath: m_VersionIndex
-      value: 6394
+      value: 6400
       objectReference: {fileID: 0}
     - target: {fileID: 2740318515557321928, guid: 5babc6b3674b57548a6ba9465d0df7d6, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -479,6 +480,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1242700729}
+    - target: {fileID: 4115013297698288239, guid: 5babc6b3674b57548a6ba9465d0df7d6, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115013297698288239, guid: 5babc6b3674b57548a6ba9465d0df7d6, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4749272356853974804, guid: 5babc6b3674b57548a6ba9465d0df7d6, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -502,7 +511,7 @@ PrefabInstance:
       objectReference: {fileID: 1010455771}
     - target: {fileID: 6459011605718381213, guid: 5babc6b3674b57548a6ba9465d0df7d6, type: 3}
       propertyPath: m_VersionIndex
-      value: 24
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7291715690885225751, guid: 5babc6b3674b57548a6ba9465d0df7d6, type: 3}
       propertyPath: m_Mesh
@@ -514,7 +523,7 @@ PrefabInstance:
       objectReference: {fileID: 1157178059}
     - target: {fileID: 7404302166465774109, guid: 5babc6b3674b57548a6ba9465d0df7d6, type: 3}
       propertyPath: m_VersionIndex
-      value: 6394
+      value: 6400
       objectReference: {fileID: 0}
     - target: {fileID: 7822917309046144250, guid: 5babc6b3674b57548a6ba9465d0df7d6, type: 3}
       propertyPath: m_Mesh
