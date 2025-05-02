@@ -5,20 +5,21 @@ public class DisableCollider : MonoBehaviour
     public void DisableAllColliders()
     {
         Collider[] colliders = GetComponentsInChildren<Collider>();
+        Debug.Log("Disabling colliders in " + gameObject.name);
         foreach (Collider collider in colliders)
         {
             collider.enabled = false;
-            Debug.Log("Disabled collider: " + collider.name);
         }
     }
 
     public void EnableAllColliders()
     {
         Collider[] colliders = GetComponentsInChildren<Collider>();
+        Debug.Log("Enabling colliders in " + gameObject.name);
         foreach (Collider collider in colliders)
         {
             collider.enabled = true;
-            Debug.Log("Enabled collider: " + collider.name);
+
         }
     }
 }
