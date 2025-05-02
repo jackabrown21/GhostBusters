@@ -5,16 +5,15 @@ public class Consumable : MonoBehaviour
 
     [SerializeField] GameObject[] portions;
     [SerializeField] int index = 0;
-
-    // AudioSource _audioSource;
+    AudioSource _audioSource;
     public bool IsFinished => index == portions.Length;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // _audioSource = GetComponent<AudioSource>();
-        // _audioSource.playOnAwake = false;
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.playOnAwake = false;
         setVisuals();
 
     }
@@ -30,7 +29,7 @@ public class Consumable : MonoBehaviour
     {
         if (!IsFinished)
         {
-            // _audioSource.Play();
+            _audioSource.Play();
             index++;
             setVisuals();
         }
