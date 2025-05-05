@@ -14,6 +14,7 @@ public class GhostRetriever : MonoBehaviour
 
     private bool isHeld = false;
     private int ghostCount = 0;
+    public int GhostCount => ghostCount;
 
     private void Start()
     {
