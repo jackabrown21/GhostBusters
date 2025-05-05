@@ -7,7 +7,6 @@ public class ToggleLight : MonoBehaviour
     public Material NonEmissiveMaterial; // Reference to the non-emissive material
     public Light lightSource; // Reference to the light source
 
-    [ContextMenu("ToggleLightSource")]
     public void ToggleLightSource()
     {
         if (lightSource != null)
