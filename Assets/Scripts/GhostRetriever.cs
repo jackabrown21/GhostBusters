@@ -16,6 +16,9 @@ public class GhostRetriever : MonoBehaviour
     private int ghostCount = 0;
     public int GhostCount => ghostCount;
 
+    public int totalGhostsToWin = 5;
+
+
     private void Start()
     {
         if (interactable == null)
@@ -70,8 +73,15 @@ public class GhostRetriever : MonoBehaviour
         Destroy(other.gameObject);
 
         ghostCount++;
-        if (ghostCounterText != null)
-            ghostCounterText.text = ghostCount.ToString();
+
+        if (ghostCount >= totalGhostsToWin)
+        {
+            TriggerWin();
+        }
+        else if (ghostCounterText != null)
+        {
+        ghostCounterText.text = ghostCount.ToString();
+        }
     }
 }
 
@@ -84,4 +94,17 @@ public class GhostRetriever : MonoBehaviour
             Debug.Log("[GhostRetriever] Vacuum sound stopped");
         }
     }
+
+    private void TriggerWin()
+    {
+    Debug.Log("🎉 WIN CONDITION MET — Replacing ghost counter with win message");
+
+    if (ghostCounterText != null)
+    {
+        ghostCounterText.text = "You Win!!";
+        ghostCounterText.color = new Color(0.3f, 1f, 0.3f); 
+
+    }
+    }
+
 }
