@@ -16,7 +16,7 @@ public class GhostRetriever : MonoBehaviour
     private int ghostCount = 0;
     public int GhostCount => ghostCount;
 
-    public int totalGhostsToWin = 5;
+    private int totalGhostsToWin = 5;
 
 
     private void Start()
@@ -40,50 +40,71 @@ public class GhostRetriever : MonoBehaviour
                 if (vacuumAudioSource != null)
                     vacuumAudioSource.Stop();
             });
+
+            interactable.activated.AddListener(_ =>
+            {
+                Debug.Log("[GhostRetriever] Vacuum activated");
+                if (vacuumAudioSource != null && vacuumSound != null)
+                {
+                    vacuumAudioSource.clip = vacuumSound;
+                    vacuumAudioSource.loop = true;
+                    vacuumAudioSource.Play();
+                }
+            });
+
+            interactable.deactivated.AddListener(_ =>
+            {
+                Debug.Log("[GhostRetriever] Vacuum deactivated");
+                if (vacuumAudioSource != null)
+                    vacuumAudioSource.Stop();
+            });
         }
 
+
         if (ghostCounterText != null)
-            ghostCounterText.text = "0";
+            ghostCounterText.text = "0/5";
     }
 
     private void OnTriggerStay(Collider other)
-{
-    if (!isHeld) return;
-
-    if (!other.CompareTag("Ghost")) return; // Check the collider you actually hit
-
-    float distance = Vector3.Distance(suctionPoint.position, other.transform.position);
-    Debug.Log($"[GhostRetriever] Distance to {other.name}: {distance}");
-
-    if (distance < destroyDistance)
     {
-        Debug.Log($"[GhostRetriever] Ghost destroyed: {other.name}");
+        if (!isHeld) return;
 
-        if (vacuumAudioSource != null && vacuumSound != null)
+        if (!other.CompareTag("Ghost")) return; // Check the collider you actually hit
+
+        if (vacuumAudioSource.isPlaying == false) return; // Check if the vacuum is activated
+
+        float distance = Vector3.Distance(suctionPoint.position, other.transform.position);
+        Debug.Log($"[GhostRetriever] Distance to {other.name}: {distance}");
+
+        if (distance < destroyDistance)
         {
-            if (!vacuumAudioSource.isPlaying)
+            Debug.Log($"[GhostRetriever] Ghost destroyed: {other.name}");
+
+            if (vacuumAudioSource != null && vacuumSound != null)
             {
-                vacuumAudioSource.clip = vacuumSound;
-                vacuumAudioSource.loop = false;
-                vacuumAudioSource.Play();
-                Invoke(nameof(StopVacuumSound), 2f);
+                if (!vacuumAudioSource.isPlaying)
+                {
+                    vacuumAudioSource.clip = vacuumSound;
+                    vacuumAudioSource.loop = false;
+                    vacuumAudioSource.Play();
+                    Invoke(nameof(StopVacuumSound), 2f);
+                }
+            }
+
+            Destroy(other.gameObject);
+
+            ghostCount++;
+
+            if (ghostCount >= totalGhostsToWin)
+            {
+                TriggerWin();
+            }
+            else if (ghostCounterText != null)
+            {
+                ghostCounterText.text = ghostCount.ToString() + "/" + totalGhostsToWin.ToString();
             }
         }
-
-        Destroy(other.gameObject);
-
-        ghostCount++;
-
-        if (ghostCount >= totalGhostsToWin)
-        {
-            TriggerWin();
-        }
-        else if (ghostCounterText != null)
-        {
-        ghostCounterText.text = ghostCount.ToString();
-        }
     }
-}
 
 
     private void StopVacuumSound()
@@ -97,14 +118,14 @@ public class GhostRetriever : MonoBehaviour
 
     private void TriggerWin()
     {
-    Debug.Log("🎉 WIN CONDITION MET — Replacing ghost counter with win message");
+        Debug.Log("🎉 WIN CONDITION MET — Replacing ghost counter with win message");
 
-    if (ghostCounterText != null)
-    {
-        ghostCounterText.text = "You Win!!";
-        ghostCounterText.color = new Color(0.3f, 1f, 0.3f); 
+        if (ghostCounterText != null)
+        {
+            ghostCounterText.text = "You Win!!";
+            ghostCounterText.color = new Color(0.3f, 1f, 0.3f);
 
-    }
+        }
     }
 
 }

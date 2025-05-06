@@ -246,7 +246,7 @@ MonoBehaviour:
   destroyDistance: 1
   interactable: {fileID: 8170475796209001825}
   vacuumAudioSource: {fileID: 7751012991544134849}
-  vacuumSound: {fileID: 8300000, guid: b76f36c7a19424da089580fd3f21c357, type: 3}
+  vacuumSound: {fileID: 8300000, guid: 7fae3ce9795cb66468cef605f7b7eedc, type: 3}
   ghostCounterText: {fileID: 751027027103816526}
 --- !u!1 &4316169027908811963
 GameObject:
@@ -600,7 +600,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -14,10 +14,15 @@ public class ReturnToHolster : MonoBehaviour
         grab = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
         rb = GetComponent<Rigidbody>();
 
-        grab.selectEntered.AddListener(_ => isHeld = true);
+        grab.selectEntered.AddListener(_ =>
+        {
+            isHeld = true;
+            // setColliders(true);
+        });
         grab.selectExited.AddListener(_ =>
         {
             isHeld = false;
+            // setColliders(false);
             Invoke(nameof(ReturnToHolsterIfNotHeld), 1.0f);
         });
     }
@@ -38,6 +43,15 @@ public class ReturnToHolster : MonoBehaviour
         if (!isHeld && transform.parent == holsterPoint)
         {
             rb.isKinematic = true;
+        }
+    }
+
+    void setColliders(bool enable)
+    {
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = enable;
         }
     }
 }

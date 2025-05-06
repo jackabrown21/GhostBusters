@@ -6,6 +6,8 @@ public class SpecialItem : MonoBehaviour
     public enum ItemType { WallDestroyer, QuitGame }
     public ItemType itemType;
 
+
+    [SerializeField] GameObject[] toDestroy;
     public GameObject wallToDestroy;
 
     void Start()
@@ -27,10 +29,19 @@ public class SpecialItem : MonoBehaviour
             UnityEditor.EditorApplication.isPlaying = false;
 #endif
         }
-        else if (itemType == ItemType.WallDestroyer && wallToDestroy != null)
+        else if (itemType == ItemType.WallDestroyer)
         {
-            Debug.Log("Wall item picked up. Destroying wall...");
-            Destroy(wallToDestroy);
+            // Destroy all objects in the toDestroy array
+            foreach (GameObject obj in toDestroy)
+            {
+                if (obj != null)
+                {
+                    Debug.Log("Destroying object: " + obj.name);
+                    // Destroy object and its children
+                    Destroy(obj);
+
+                }
+            }
         }
 
         Destroy(gameObject); // Optionally destroy the cube after pickup
