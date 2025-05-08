@@ -1,10 +1,19 @@
 # ninja log v5
 52	2123	7652382618776569	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	6f759310f32e376a
+2775	2923	7652382627011462	C:/Users/busin/Documents/GitHub/GhostBusters/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1jk5b444/obj/arm64-v8a/libgame.so	4154f0175f65a151
 32	2134	7652382618506595	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	b8f72b3ab0c8e946
-11	2152	7652382618959728	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	d086020ff502f746
-76	2200	7652382619634452	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	49a87b18ccc7220f
 61	2322	7652382620819667	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7c027ea4748b6c08
+11	2152	7652382618959728	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	d086020ff502f746
 1	2417	7652382621837124	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	b164f39b1a694649
+76	2200	7652382619634452	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	49a87b18ccc7220f
 42	2645	7652382624144954	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	2c7925a91e55b1d9
 22	2775	7652382625487268	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c9ef086937490b01
-2775	2923	7652382627011462	C:/Users/busin/Documents/GitHub/GhostBusters/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1jk5b444/obj/arm64-v8a/libgame.so	4154f0175f65a151
+55	5938	7684285161408572	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	b8f72b3ab0c8e946
+25	5980	7684285161809313	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	d086020ff502f746
+68	5982	7684285162214423	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	49a87b18ccc7220f
+5	6115	7684285163637324	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	6f759310f32e376a
+94	6137	7684285163858876	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7c027ea4748b6c08
+14	6287	7684285165389488	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	b164f39b1a694649
+82	6564	7684285168325904	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	2c7925a91e55b1d9
+40	6747	7684285170067395	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c9ef086937490b01
+6747	7174	7684285174479311	C:/Users/busin/Documents/GitHub/GhostBusters/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1jk5b444/obj/arm64-v8a/libgame.so	4154f0175f65a151
